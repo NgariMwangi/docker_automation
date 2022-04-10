@@ -1,9 +1,16 @@
-sudo: required
-services:
-  -docker
+language: python
+python:
+  - "3.5"
+virtualenv:
+  system_site_packages: true
 
-before_install:
-  - docker build -t travis_test -f Dockerfile.dev .
+
+# sudo: required
+# services:
+#   -docker
+
+# before_install:
+#   - docker build -t travis_test -f Dockerfile.dev .
   
-script:
-  - docker run travis_test npm run test -- --coverage 
+# script:
+#   - docker run travis_test npm run test -- --coverage 
